@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./layouts/layout";
+import Layout from "./layouts/Layout";
 import HomePage from "./pages/Home";
 import AxiosPage from "./pages/Axios/Axios";
 import reportWebVitals from "./reportWebVitals";
