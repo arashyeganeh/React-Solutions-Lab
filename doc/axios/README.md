@@ -46,7 +46,7 @@ $ npm install axios
 
 Obtain the List of Products from the Server with Maximum Simplicity.
 
-```react
+```javascript
 import { useState } from "react";
 import axios from "axios";
 
