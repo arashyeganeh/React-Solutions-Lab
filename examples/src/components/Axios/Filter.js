@@ -1,6 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
 
+const Information = {
+  title: "filter response",
+  desc: "New Description New Description New Description New Description New Description New Description",
+};
+
 // Fetch data using axios
 async function fetchData() {
   const baseUrl = "http://localhost:3001/api/axios/shop";
@@ -13,13 +18,16 @@ async function fetchData() {
   }
 }
 
-function BasicRequest() {
+function FilterResponse() {
   const [result, setResult] = useState("");
 
   async function fetchAndSetResult() {
     try {
       const fetchedData = await fetchData();
-      setResult(JSON.stringify(fetchedData, null, 4));
+      const Iphones = fetchedData.filter((item) =>
+        item.product_name.toLowerCase().includes("iphone")
+      );
+      setResult(JSON.stringify(Iphones, null, 4));
     } catch (error) {
       setResult("Error fetching data");
     }
@@ -27,8 +35,8 @@ function BasicRequest() {
 
   return (
     <>
-      <h2>Get Data with a Simple Axios Request</h2>
-      <p>Obtain the List of Products from the Server with Maximum Simplicity.</p>
+      <h2>{Information.title}</h2>
+      <p>{Information.desc}</p>
       <button onClick={fetchAndSetResult}>Fetch Data</button>
       {result && (
         <pre className="result">
@@ -39,4 +47,4 @@ function BasicRequest() {
   );
 }
 
-export default BasicRequest;
+export default FilterResponse;

@@ -1,14 +1,20 @@
 import { Link } from "react-router-dom";
 
 function Sidebar() {
-    return <ul>
-        <li>
+  return (
+    <>
+      <nav>
+        <ul>
+          <li>
             <Link to="/">Home</Link>
-        </li>
-        <li>
+          </li>
+          <li>
             <Link to="/axios">Axios</Link>
-        </li>
-    </ul>;
+          </li>
+        </ul>
+      </nav>
+    </>
+  );
 }
 
 export default Sidebar;

@@ -1,20 +1,19 @@
 import { Outlet } from "react-router-dom";
-import { Container } from "react-bootstrap";
 import SidebarPartialLayout from "./shared/Sidebar";
+import FooterPartialLayout from "./shared/Footer";
 
 function Layout() {
   return (
     <>
-      <Container>
-        <div className="row">
-          <div className="col-2">
-            <SidebarPartialLayout />
-          </div>
-          <div className="col-10">
-            <Outlet />
-          </div>
+      <div className="flex">
+        <div className="bg-gray-100 w-1/5 p-5">
+          <SidebarPartialLayout />
         </div>
-      </Container>
+        <div className="w-4/5 p-5">
+          <Outlet />
+        </div>
+      </div>
+      <FooterPartialLayout />
     </>
   );
 }

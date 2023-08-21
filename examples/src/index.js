@@ -5,7 +5,6 @@ import Layout from "./layouts/Layout";
 import HomePage from "./pages/Home";
 import AxiosPage from "./pages/Axios/Axios";
 import reportWebVitals from "./reportWebVitals";
-import "./styles/global.scss";
 import "./styles/style.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

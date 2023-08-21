@@ -1,3 +1,35 @@
-code{
-    background-color: rgb(223, 223, 223);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200;
+}
+
+h2 {
+  @apply text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight dark:text-slate-200;
+}
+
+h3 {
+  @apply flex whitespace-pre-wrap;
+}
+
+p {
+  @apply mt-2 text-lg text-slate-700 dark:text-slate-400;
+}
+
+ul {
+  @apply list-disc list-inside text-slate-900 dark:text-slate-200 mb-2;
+}
+
+pre {
+  @apply block bg-zinc-900 text-white overflow-y-auto drop-shadow rounded p-2 mt-2 mb-5;
+
+  &.result {
+    @apply bg-lime-100  text-black;
+  }
+}
+
+button{
+    @apply bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none
 }
