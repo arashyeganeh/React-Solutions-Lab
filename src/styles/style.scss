@@ -1,0 +1,40 @@
+// $theme-colors: (
+//   'info': tomato,
+//   'danger': teal
+// );
+
+@import "~bootstrap/scss/bootstrap";
+@import "~highlight.js/styles/github.css";
+@import "./_dracula-highlightjs.css";
+
+:root {
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+}
+
+h2 {
+  font-weight: $font-weight-bold;
+  margin-top: ($spacer * 3) !important;
+}
+
+.result {
+  max-height: 10rem;
+  overflow: auto;
+  border-radius: $border-radius-sm;
+  box-shadow: $box-shadow-sm;
+  margin: ($spacer * 1) 0;
+  padding: ($spacer * 1);
+  background-color: #d8ffcb;
+  &.error {
+    background-color: #ffcbcb;
+  }
+}
+
+.hljs {
+  background-color: rgb(23 23 23);
+}
+
+code {
+  border-radius: $border-radius-sm;
+  box-shadow: $box-shadow-sm;
+}

@@ -26,8 +26,9 @@ app.get("/api/axios/shop", async (req, res) => {
   }
 });
 
-app.get("/api/axios/shop/loading", async (req, res) => {
-  await setTimeout(async () => { // Delay
+app.get("/api/axios/loading", async (req, res) => {
+  await setTimeout(async () => {
+    // Delay
     try {
       const data = await fs.readFile(
         path.resolve(__dirname, "data", "shop.json"),
@@ -38,6 +39,22 @@ app.get("/api/axios/shop/loading", async (req, res) => {
       res.status(500).json({ error: "Internal server error" });
     }
   }, 5000);
+});
+
+app.get("/api/axios/infinite", (req, res) => {
+  let baseData = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  try {
+    const page = req.query.page;
+    if (page) {
+      let data = baseData.map((item) => item + 10 * page);
+      res.send(data);
+    } else {
+      res.send(baseData);
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
 app.listen(port, () => {

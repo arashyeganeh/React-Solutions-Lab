@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
-import HomePage from "./pages/Home";
-import AxiosPage from "./pages/Axios/Axios";
+import AxiosPage from "./pages/Axios";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/style.scss";
 
@@ -13,8 +12,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path="axios" element={<AxiosPage />} />
+          <Route index element={<AxiosPage />} />
+          <Route path="*" element={<AxiosPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
