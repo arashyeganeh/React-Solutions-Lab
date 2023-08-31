@@ -36,22 +36,22 @@ function InfiniteScroll() {
     // ) {
     //   return;
     // }
-    fetchData();
+    // fetchData();
   }
 
   useEffect(() => {
-    fetchData();
+    // fetchData();
   }, []);
 
-  useEffect(() => {
-    document
-      .getElementById("infinite-scroll-result")
-      .addEventListener("scroll", handleScroll);
-    return () =>
-      document
-        .getElementById("infinite-scroll-result")
-        .removeEventListener("scroll", handleScroll);
-  });
+  // useEffect(() => {
+  //   // document
+  //   //   .getElementById("infinite-scroll-result")
+  //   //   .addEventListener("scroll", handleScroll);
+  //   return () =>
+  //     // document
+  //     //   .getElementById("infinite-scroll-result")
+  //     //   .removeEventListener("scroll", handleScroll);
+  // });
 
   return (
     <>

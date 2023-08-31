@@ -16,14 +16,12 @@ function AxiosTutorial() {
   }, []);
   return (
     <>
-      <div className="position-relative bg-secondary py-5 mb-5">
+      <div className="position-relative text-primary bg-secondary py-5 mb-5">
         <Container>
-          <Row className="text-primary py-5">
+          <Row className="py-5">
             <Col>
               <h1 className="display-1 fw-bold mb-4">React with Axios</h1>
-              <h3>
-                Let's delve into the most common obstacles
-              </h3>
+              <h3>Let's delve into the most common obstacles</h3>
               <span className="fs-5">by Arash Yeganeh</span>
             </Col>
           </Row>
@@ -35,7 +33,7 @@ function AxiosTutorial() {
         >
           <path
             fill="#82CBE3"
-            fill-opacity="1"
+            fillOpacity="1"
             d="M0,128L40,117.3C80,107,160,85,240,106.7C320,128,400,192,480,202.7C560,213,640,171,720,133.3C800,96,880,64,960,58.7C1040,53,1120,75,1200,112C1280,149,1360,203,1400,229.3L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
           ></path>
         </svg>

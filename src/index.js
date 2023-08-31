@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./layouts/Layout";
 import AxiosPage from "./pages/Axios";
+import HomePage from "./pages/Home";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/style.scss";
 
@@ -12,8 +13,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<AxiosPage />} />
-          <Route path="*" element={<AxiosPage />} />
+          <Route index element={<HomePage />} />
+          <Route path="/axios" element={<AxiosPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
