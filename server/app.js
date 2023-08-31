@@ -5,6 +5,7 @@ const app = express();
 const port = 3001;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -52,6 +53,23 @@ app.get("/api/axios/infinite", (req, res) => {
     } else {
       res.send(baseData);
     }
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+app.post("/api/axios/form", (req, res) => {
+  try {
+    console.log(req.body);
+    res.send("Ok :)");
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+app.get("/api/axios/parallel/:text", (req, res) => {
+  try {
+    res.send(req.params.text);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }

@@ -1,11 +1,11 @@
 import { Outlet } from "react-router-dom";
-import FooterPartialLayout from "./shared/Footer";
+import FooterLayout from "./shared/Footer";
 
 function Layout() {
   return (
     <>
       <Outlet />
-      <FooterPartialLayout />
+      <FooterLayout />
     </>
   );
 }

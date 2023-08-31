@@ -14,7 +14,7 @@ async function fetchData() {
   }
 }
 
-function BasicRequest() {
+function GETRequest() {
   const [result, setResult] = useState("");
   const [isError, setIsError] = useState(false);
 
@@ -32,12 +32,12 @@ function BasicRequest() {
 
   return (
     <>
-      <h2>Get Data with a Simple Axios Request</h2>
+      <h2>GET Request</h2>
       <p>
         Obtain the List of Products from the Server with Maximum Simplicity.
       </p>
       <pre>
-        <code>{`async function fetchData() {
+        <code className="language-javascript">{`async function fetchData() {
   const API_BASE_URL = "http://localhost:3001/api/axios/shop";
   try {
     const response = await axios.get(API_BASE_URL);
@@ -58,4 +58,4 @@ function BasicRequest() {
   );
 }
 
-export default BasicRequest;
+export default GETRequest;
