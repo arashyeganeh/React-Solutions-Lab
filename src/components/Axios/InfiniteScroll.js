@@ -21,7 +21,6 @@ function InfiniteScroll() {
   async function updateList() {
     try {
       let response = await fetchData(page);
-      console.log(response, results);
       setResults((results) => [...results, ...response]);
       setPage((pageCount) => pageCount + 1);
     } catch (error) {
@@ -78,7 +77,6 @@ function InfiniteScroll() {
   async function updateList() {
     try {
       let response = await fetchData(page);
-      console.log(response, results);
       setResults((results) => [...results, ...response]);
       setPage((pageCount) => pageCount + 1);
     } catch (error) {

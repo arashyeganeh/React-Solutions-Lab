@@ -1,8 +1,59 @@
 const path = require("path");
 const express = require("express");
-const fs = require("fs/promises");
 const app = express();
 const port = 3001;
+
+const SHOP_DATA = [
+  {
+    id: 0,
+    product_name: "iPhone 6S",
+    product_description:
+      "A classic smartphone from Apple, featuring a powerful processor and a stunning Retina display.",
+    price: 799,
+  },
+  {
+    id: 1,
+    product_name: "iPhone 5S",
+    product_description:
+      "A previous-generation iPhone known for its sleek design and compact size.",
+    price: 349,
+  },
+  {
+    id: 2,
+    product_name: "Macbook",
+    product_description:
+      "The flagship laptop from Apple, offering high performance and an elegant design.",
+    price: 1499,
+  },
+  {
+    id: 3,
+    product_name: "Macbook Air",
+    product_description:
+      "A lightweight and portable laptop with all-day battery life, perfect for on-the-go professionals.",
+    price: 999,
+  },
+  {
+    id: 4,
+    product_name: "Macbook Air 2013",
+    product_description:
+      "An older version of the Macbook Air, still capable of handling everyday tasks.",
+    price: 599,
+  },
+  {
+    id: 5,
+    product_name: "Macbook Air 2012",
+    product_description:
+      "A previous-generation Macbook Air, offering a balance between performance and portability.",
+    price: 499,
+  },
+  {
+    id: 6,
+    product_name: "iPad Pro",
+    product_description:
+      "The ultimate tablet for productivity and creativity, equipped with a powerful chipset and a stunning display.",
+    price: 1099,
+  },
+];
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -17,11 +68,7 @@ app.use(function (req, res, next) {
 
 app.get("/api/axios/shop", async (req, res) => {
   try {
-    const data = await fs.readFile(
-      path.resolve(__dirname, "data", "shop.json"),
-      "utf-8"
-    );
-    res.json(JSON.parse(data));
+    res.json(SHOP_DATA);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
@@ -31,11 +78,7 @@ app.get("/api/axios/loading", async (req, res) => {
   await setTimeout(async () => {
     // Delay
     try {
-      const data = await fs.readFile(
-        path.resolve(__dirname, "data", "shop.json"),
-        "utf-8"
-      );
-      res.json(JSON.parse(data));
+      res.json(SHOP_DATA);
     } catch (error) {
       res.status(500).json({ error: "Internal server error" });
     }
