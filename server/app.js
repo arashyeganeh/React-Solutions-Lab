@@ -60,8 +60,8 @@ app.get("/api/axios/infinite", (req, res) => {
 
 app.post("/api/axios/form", (req, res) => {
   try {
-    console.log(req.body);
-    res.send("Ok :)");
+    const name = req.body.name || "unknown";
+    res.send(`Hi ${name}`);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }

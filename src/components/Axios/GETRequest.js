@@ -18,7 +18,7 @@ function GETRequest() {
   const [result, setResult] = useState("");
   const [isError, setIsError] = useState(false);
 
-  async function fetchAndSetResult() {
+  async function handleClick() {
     try {
       setResult("");
       setIsError(false);
@@ -48,7 +48,7 @@ function GETRequest() {
   }
 }`}</code>
       </pre>
-      <Button onClick={fetchAndSetResult} variant="outline-info">
+      <Button onClick={handleClick} variant="outline-info">
         Run
       </Button>
       {result && (
